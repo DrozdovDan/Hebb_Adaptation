@@ -1,0 +1,15 @@
+{"time":"2025-03-11T17:54:50.60987909+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"/home/drozdovdan/Hebb_Adaptation/nanoGPT/wandb/run-20250311_175450-gj4fsra5/logs/debug-core.log"}
+{"time":"2025-03-11T17:54:50.819987583+03:00","level":"INFO","msg":"created new stream","id":"gj4fsra5"}
+{"time":"2025-03-11T17:54:50.820023512+03:00","level":"INFO","msg":"stream: started","id":"gj4fsra5"}
+{"time":"2025-03-11T17:54:50.820111091+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:54:50.820136811+03:00","level":"INFO","msg":"handler: started","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:54:50.820222379+03:00","level":"INFO","msg":"sender: started","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:54:51.197130797+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-11T17:59:08.301517154+03:00","level":"INFO","msg":"stream: closing","id":"gj4fsra5"}
+{"time":"2025-03-11T17:59:08.301555623+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-11T17:59:08.302531688+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-11T17:59:09.115121302+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-11T17:59:09.310540312+03:00","level":"INFO","msg":"handler: closed","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:59:09.310575472+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:59:09.310594622+03:00","level":"INFO","msg":"sender: closed","stream_id":"gj4fsra5"}
+{"time":"2025-03-11T17:59:09.31071442+03:00","level":"INFO","msg":"stream: closed","id":"gj4fsra5"}

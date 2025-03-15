@@ -1,0 +1,15 @@
+{"time":"2025-03-14T20:35:08.194439805+03:00","level":"INFO","msg":"stream: starting","core version":"0.19.4","symlink path":"/home/drozdovdan/Hebb_Adaptation/nanoGPT/wandb/run-20250314_203507-z4cn7pwn/logs/debug-core.log"}
+{"time":"2025-03-14T20:35:08.409599383+03:00","level":"INFO","msg":"created new stream","id":"z4cn7pwn"}
+{"time":"2025-03-14T20:35:08.409684272+03:00","level":"INFO","msg":"stream: started","id":"z4cn7pwn"}
+{"time":"2025-03-14T20:35:08.409750891+03:00","level":"INFO","msg":"sender: started","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:35:08.409739921+03:00","level":"INFO","msg":"writer: Do: started","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:35:08.40979243+03:00","level":"INFO","msg":"handler: started","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:35:08.685036406+03:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-14T20:39:18.761377807+03:00","level":"INFO","msg":"stream: closing","id":"z4cn7pwn"}
+{"time":"2025-03-14T20:39:18.761408897+03:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-14T20:39:18.761932199+03:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-14T20:39:20.184248466+03:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-14T20:39:20.424285655+03:00","level":"INFO","msg":"handler: closed","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:39:20.424326334+03:00","level":"INFO","msg":"writer: Close: closed","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:39:20.424336364+03:00","level":"INFO","msg":"sender: closed","stream_id":"z4cn7pwn"}
+{"time":"2025-03-14T20:39:20.42727591+03:00","level":"INFO","msg":"stream: closed","id":"z4cn7pwn"}

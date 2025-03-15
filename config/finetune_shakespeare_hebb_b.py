@@ -3,7 +3,7 @@ import time
 out_dir = 'out-shakespeare'
 eval_interval = 5
 eval_iters = 40
-wandb_log = False # feel free to turn on
+wandb_log = True # feel free to turn on
 wandb_project = 'shakespeare'
 wandb_run_name = 'ft-' + str(time.time())
 
@@ -31,6 +31,6 @@ alpha=32
 hebb_dropout=0.1
 attn_modules=['c_attn']
 hebb_lr=0.045
-initialization='normal'
+initialization='zeros'
 temperature=1.0
 hebb_linears=['lora_b']

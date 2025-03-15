@@ -1,0 +1,1029 @@
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] WON'T CONVERT forward /home/drozdovdan/Hebb_Adaptation/nanoGPT/model.py line 1032
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] due to:
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:53.417000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] WON'T CONVERT forward /home/drozdovdan/Hebb_Adaptation/nanoGPT/model.py line 978
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] due to:
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:53.771000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] WON'T CONVERT forward /home/drozdovdan/Hebb_Adaptation/nanoGPT/model.py line 935
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] due to:
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:54.145000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] WON'T CONVERT forward /home/drozdovdan/Hebb_Adaptation/nanoGPT/model.py line 860
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] due to:
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1446, in _call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = compiler_fn(gm, self.example_inputs())
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_dynamo.py", line 129, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_gm = compiler_fn(gm, example_inputs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/__init__.py", line 2234, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return compile_fx(model_, inputs_, config_patches=self.config)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1521, in compile_fx
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return aot_autograd(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/backends/common.py", line 72, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     cg = aot_module_simplified(gm, example_inputs, **self.kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1071, in aot_module_simplified
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = dispatch_and_compile()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 1056, in dispatch_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, _ = create_aot_dispatcher_function(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 522, in create_aot_dispatcher_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _create_aot_dispatcher_function(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/aot_autograd.py", line 759, in _create_aot_dispatcher_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn, fw_metadata = compiler_fn(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                                ^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_functorch/_aot_autograd/jit_compile_runtime_wrappers.py", line 179, in aot_dispatch_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fw = compiler(fw_module, updated_flat_args)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1350, in fw_compiler_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _fw_compiler_base(model, example_inputs, is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 1421, in _fw_compiler_base
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return inner_compile(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 475, in compile_fx_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return wrap_compiler_debug(_compile_fx_inner, compiler_name="inductor")(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/repro/after_aot.py", line 85, in debug_wrapper
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     inner_compiled_fn = compiler_fn(gm, example_inputs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 661, in _compile_fx_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = FxGraphCache.load(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/codecache.py", line 1334, in load
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = compile_fx_fn(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 570, in codegen_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_graph = fx_codegen_and_compile(gm, example_inputs, **fx_kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 789, in fx_codegen_and_compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     _recursive_post_grad_passes(gm, is_inference=is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/compile_fx.py", line 288, in _recursive_post_grad_passes
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     post_grad_passes(gm, is_inference)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/post_grad.py", line 100, in post_grad_passes
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     patterns.apply(gm.graph)  # type: ignore[arg-type]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     ^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/pattern_matcher.py", line 1729, in apply
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     if is_match(m) and entry.extra_check(m):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                        ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_inductor/fx_passes/quantization.py", line 1448, in fn
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     scales = match.kwargs["scales"].meta["val"]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] The above exception was the direct cause of the following exception:
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Traceback (most recent call last):
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 1064, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     result = self._inner_convert(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]              ^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 526, in __call__
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 924, in _compile
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     guarded_code = compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 666, in compile_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return _compile_inner(code, one_graph, hooks, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_utils_internal.py", line 87, in wrapper_function
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return function(*args, **kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 699, in _compile_inner
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     out_code = transform_code_object(code, transform)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/bytecode_transformation.py", line 1322, in transform_code_object
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     transformations(instructions, code_options)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 219, in _fn
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return fn(*args, **kwargs)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/convert_frame.py", line 634, in transform
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     tracer.run()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2796, in run
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     super().run()
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 983, in run
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     while self.step():
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]           ^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 895, in step
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.dispatch_table[inst.opcode](self, inst)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2987, in RETURN_VALUE
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self._return(inst)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/symbolic_convert.py", line 2972, in _return
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.output.compile_subgraph(
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1142, in compile_subgraph
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     self.compile_and_call_fx_graph(tx, pass2.graph_output_vars(), root)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1369, in compile_and_call_fx_graph
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     compiled_fn = self.call_user_compiler(gm)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1416, in call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     return self._call_user_compiler(gm)
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]   File "/home/drozdovdan/miniconda3/lib/python3.12/site-packages/torch/_dynamo/output_graph.py", line 1465, in _call_user_compiler
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]     raise BackendCompilerFailed(self.compiler_fn, e) from e
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] torch._dynamo.exc.BackendCompilerFailed: backend='inductor' raised:
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] AttributeError: 'float' object has no attribute 'meta'
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125] Set TORCH_LOGS="+dynamo" and TORCHDYNAMO_VERBOSE=1 for more information
+W0315 02:46:54.254000 3126411 site-packages/torch/_dynamo/convert_frame.py:1125]
+step 0: train loss 3.8915, val loss 3.7437
+iter 0: loss 4.5875, time 23336.13ms, mfu -100.00%
+iter 1: loss 3.7302, time 3314.26ms, mfu -100.00%
+iter 2: loss 3.4950, time 3310.48ms, mfu -100.00%
+iter 3: loss 3.6294, time 3297.09ms, mfu -100.00%
+iter 4: loss 2.7336, time 3323.89ms, mfu -100.00%
+step 5: train loss 3.1052, val loss 2.9167
+saving checkpoint to out-shakespeare
+iter 5: loss 3.4448, time 30696.77ms, mfu 3.52%
+iter 6: loss 2.8247, time 3305.80ms, mfu 6.44%
+iter 7: loss 2.9712, time 3659.65ms, mfu 8.75%
+iter 8: loss 3.2464, time 3291.55ms, mfu 11.16%
+iter 9: loss 2.9681, time 3318.58ms, mfu 13.30%
+step 10: train loss 3.0669, val loss 2.9616
+iter 10: loss 2.8776, time 6609.23ms, mfu 13.61%
+iter 11: loss 2.6688, time 3289.19ms, mfu 15.53%
+iter 12: loss 3.2458, time 3333.97ms, mfu 17.22%
+iter 13: loss 2.9361, time 3302.73ms, mfu 18.77%
+iter 14: loss 3.1966, time 3308.98ms, mfu 20.16%
+step 15: train loss 3.0873, val loss 2.8545
+saving checkpoint to out-shakespeare
+iter 15: loss 3.0502, time 31900.93ms, mfu 18.49%
+iter 16: loss 3.2761, time 3311.55ms, mfu 19.90%
+iter 17: loss 3.4039, time 3280.58ms, mfu 21.21%
+iter 18: loss 3.3677, time 3316.22ms, mfu 22.35%
+iter 19: loss 2.7180, time 3313.37ms, mfu 23.38%
+step 20: train loss 2.9394, val loss 2.8915
+iter 20: loss 2.6667, time 6663.46ms, mfu 22.66%
+iter 21: loss 2.8474, time 3320.73ms, mfu 23.65%
+iter 22: loss 2.4539, time 3340.67ms, mfu 24.52%
+iter 23: loss 2.7679, time 3341.79ms, mfu 25.31%
+iter 24: loss 2.6841, time 3316.92ms, mfu 26.03%
+step 25: train loss 3.0227, val loss 2.8852
+iter 25: loss 2.8161, time 6893.06ms, mfu 25.00%
+iter 26: loss 3.1539, time 3350.89ms, mfu 25.73%
+iter 27: loss 3.2291, time 3333.31ms, mfu 26.40%
+iter 28: loss 3.6015, time 3322.97ms, mfu 27.01%
+iter 29: loss 2.6672, time 3225.61ms, mfu 27.66%
+step 30: train loss 3.1012, val loss 2.8936
+iter 30: loss 2.9183, time 6677.97ms, mfu 26.51%
+iter 31: loss 3.4018, time 3316.26ms, mfu 27.12%
+iter 32: loss 2.8918, time 3345.57ms, mfu 27.64%
+iter 33: loss 3.0291, time 3340.58ms, mfu 28.11%
+iter 34: loss 3.1514, time 3328.90ms, mfu 28.55%
+step 35: train loss 2.9904, val loss 2.8344
+saving checkpoint to out-shakespeare
+iter 35: loss 3.4417, time 31453.21ms, mfu 26.04%
+iter 36: loss 2.8106, time 3255.62ms, mfu 26.76%
+iter 37: loss 2.5541, time 3298.87ms, mfu 27.36%
+iter 38: loss 3.1844, time 3297.49ms, mfu 27.90%
+iter 39: loss 3.1197, time 3359.71ms, mfu 28.33%
+step 40: train loss 3.0883, val loss 2.9523
+iter 40: loss 2.8487, time 6618.11ms, mfu 27.13%

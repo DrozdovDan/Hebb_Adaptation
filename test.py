@@ -229,4 +229,7 @@ if block_size < model.config.block_size:
     model.crop_block_size(block_size)
     model_args['block_size'] = block_size # so that the checkpoint will have the right value
 
+for np, p in model.named_parameters():
+    if any(np.endswith(k) for k in ['lora_a.weight', 'lora_b.weight']):
+        print(np, p)
 print(hebb_updates)
